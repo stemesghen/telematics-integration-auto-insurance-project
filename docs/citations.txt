@@ -1,5 +1,10 @@
 Citations:
 
+
+
+Guillen M, Nielsen JP, Ayuso M, Pérez-Marín AM. The Use of Telematics Devices to Improve Automobile Insurance Rates. Risk Anal. 2019 Mar;39(3):662-672. 
+    doi: 10.1111/risa.13172. Epub 2018 Dec 19. PMID: 30566751.
+    
 Hannon, J., & O’Hagan, A. (2025). Statistical models for improved insurance risk assessment using telematics. British Actuarial Journal, 30. 
     https://doi.org/10.1017/s135732172500008x 
 
@@ -8,8 +13,3 @@ Pesantez-Narvaez, J., Guillen, M., & Alcañiz, M. (2019). Predicting motor insur
 
 Ram, K., & Broman, K. (2014). ARxiv: Interface to the arxiv API. CRAN: Contributed Packages.
     https://doi.org/10.32614/cran.package.arxiv 
-
-
-Guillen M, Nielsen JP, Ayuso M, Pérez-Marín AM. The Use of Telematics Devices to Improve Automobile Insurance Rates. Risk Anal. 2019 Mar;39(3):662-672. 
-    doi: 10.1111/risa.13172. Epub 2018 Dec 19. PMID: 30566751.
-    
