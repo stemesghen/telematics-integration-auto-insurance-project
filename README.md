@@ -137,10 +137,12 @@ curl -s http://127.0.0.1:8080/healthz | python -m json.tool
 **Simulate live ingestion** to `data_ingest/`:
 
 ```bash
-python src/sim/generate_stream.py \
-  --drivers 5 --days 1 --trips-per-day 2 --hz 1 \
-  --post http://127.0.0.1:8080/ingest/telemetry \
+
+  python src/sim/generate_stream.py \
+  --drivers 2000 --days 60 --trips-per-day 2 --hz 1 \
+  --post http://localhost:8080/ingest/telemetry
   --api-key dev-secret
+
 ```
 
 ```bash
