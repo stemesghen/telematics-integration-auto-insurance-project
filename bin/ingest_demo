@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Simulate real-time telemetry -> POST to API
+set -euo pipefail
+API_URL="${API_URL:-http://127.0.0.1:8080/ingest/telemetry}"
+KEY="${API_KEY:-dev-secret}"
+DRIVERS="${DRIVERS:-5}"
+DAYS="${DAYS:-1}"
+TRIPS_PER_DAY="${TRIPS_PER_DAY:-2}"
+HZ="${HZ:-1}"
+
+python src/sim/generate_stream.py \
+  --drivers "$DRIVERS" --days "$DAYS" --trips-per-day "$TRIPS_PER_DAY" --hz "$HZ" \
+  --post "$API_URL" --api-key "$KEY"
+

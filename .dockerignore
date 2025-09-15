@@ -1,0 +1,14 @@
+# .dockerignore
+.venv
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.git
+.gitignore
+
+# Large / generated files you’ll mount at runtime
+data/
+data_ingest/
+models/
+

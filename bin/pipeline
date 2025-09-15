@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# End-to-end: synthetic trips → features → claims → labels → train → pricing preview
+set -euo pipefail
+python src/sim/synth_trips.py
+python src/sim/build_driver_period.py
+python src/sim/synth_claims.py --multiplier 1.0 --cap 0.95 --target-prev 0.35 --min-claims 50
+python src/sim/label_next90.py
+python src/model/train_behavior_model.py
+python src/model/price_telematics.py
+echo "Pipeline complete. Artifacts: data/*.csv, models/behavior_model.joblib"

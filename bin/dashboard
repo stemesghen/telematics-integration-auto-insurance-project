@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Launch Streamlit dashboard
+set -euo pipefail
+exec streamlit run src/ui/dashboard.py
+

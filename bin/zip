@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Create submission zip: Telematics_Integration_Auto_Insurance_Project./.zip
+set -euo pipefail
+NAME="${1:-Telematics_Integration_Auto_Insurance_Project}"
+zip -r "${NAME}.zip" \
+  src models docs bin data README.md requirements.txt Dockerfile Makefile
+echo " Wrote ${NAME}.zip"

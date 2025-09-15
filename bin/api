@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Run the FastAPI locally with auto-reload
+set -euo pipefail
+export API_KEY="${API_KEY:-dev-secret}"
+exec uvicorn --app-dir src API.fast_api:app --host 0.0.0.0 --port 8080 --reload
+

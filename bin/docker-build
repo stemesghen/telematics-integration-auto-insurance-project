@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Build Docker image
+set -euo pipefail
+TAG="${TAG:-ubi-api:latest}"
+docker build -t "$TAG" .
+echo " Built image: $TAG"

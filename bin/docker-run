@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Run Docker container with mounted volumes & envs
+set -euo pipefail
+TAG="${TAG:-ubi-api:latest}"
+PORT="${PORT:-8080}"
+API_KEY_ENV="${API_KEY:-dev-secret}"
+
+mkdir -p models data data_ingest
+
+docker run -it --rm \
+  -p "${PORT}:8080" \
+  -e API_KEY="${API_KEY_ENV}" \
+  -e BASELINE_PREV="${BASELINE_PREV:-0.30}" \
+  -e PRICING_SLOPE="${PRICING_SLOPE:-0.5}" \
+  -e FACTOR_MIN="${FACTOR_MIN:-1.00}" \
+  -e FACTOR_MAX="${FACTOR_MAX:-1.10}" \
+  -v "$PWD/models:/app/models" \
+  -v "$PWD/data:/app/data" \
+  -v "$PWD/data_ingest:/app/data_ingest" \
+  "$TAG"
+

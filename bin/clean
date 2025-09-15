@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Clean generated artifacts (safe for reruns)
+set -euo pipefail
+rm -f data_ingest/*.jsonl data/*.csv models/*.joblib
+echo "�� Cleaned generated files."
+

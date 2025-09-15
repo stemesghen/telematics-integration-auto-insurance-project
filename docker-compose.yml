@@ -1,0 +1,29 @@
+services:
+  api:
+    build: .
+    container_name: ubi-api
+    ports:
+      - "8080:8080"
+    environment:
+      API_KEY: "dev-secret"
+      BASELINE_PREV: "0.30"
+      PRICING_SLOPE: "0.5"
+      FACTOR_MIN: "0.90"
+      FACTOR_MAX: "1.10"
+    volumes:
+      - ./models:/app/models
+      - ./data:/app/data
+      - ./data_ingest:/app/data_ingest
+
+  ui:
+    image: python:3.11-slim
+    container_name: ubi-ui
+    working_dir: /app
+    command: bash -lc "pip install --no-cache-dir streamlit pandas && streamlit run src/user_interface/user_dashboard.py --server.address 0.0.0.0 --server.port 8501"
+    ports:
+      - "8501:8501"
+    volumes:
+      - .:/app
+    depends_on:
+      - api
+
